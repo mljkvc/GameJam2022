@@ -14,7 +14,7 @@ public class FloatingTextManager : MonoBehaviour
     {
         foreach (FloatingText txt in floatingTexts)
         {
-
+            txt.UpdateFloatingText();
         }
     }
 
