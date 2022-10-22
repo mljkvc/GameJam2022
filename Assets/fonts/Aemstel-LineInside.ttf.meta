@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7edee8ccdcce2a1468ac844d389188c4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aemstel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d5bb55c1d683e9c4f84dfc446fa349d7, type: 3}
+  - {fileID: 12800000, guid: 19b7a0921982019479cd8c95173c0f3d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
