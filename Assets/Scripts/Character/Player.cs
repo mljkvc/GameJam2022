@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private string WALK_ANIMATION = "PlayerWalk";
     private string ATTACK_ANIMATION = "PlayerAttack";
 
+    public VectorValue startingPosition;
     public float health = 100f;
 
     // Start is called before the first frame update
@@ -26,6 +27,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+
+        transform.position = startingPosition.initialValue;
     }
 
     private void FixedUpdate() 
