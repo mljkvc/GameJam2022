@@ -11,22 +11,16 @@ public class Inventory_UI : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-        {
             otvoriInventori();
-        }
     }
 
     public void otvoriInventori()
     {
         if (!inventori.activeSelf)
-        {
             inventori.SetActive(true);
-            Setup();
-        }
+
         else
-        {
             inventori.SetActive(false); 
-        }
 
     }
 
