@@ -5,10 +5,32 @@ using UnityEngine;
 public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventori;
+    public InventorySlot[] inventorySlots;
+
+    private static Inventory_UI _instance;
+
+    public static Inventory_UI Instance { get { return _instance; } }
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+
+    }
+
 
     private void Start()
     {
         inventori.SetActive(false);
+        inventorySlots= inventori.transform.GetComponentsInChildren<InventorySlot>();
     }
 
     // Update is called once per frame
@@ -17,6 +39,7 @@ public class Inventory_UI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             otvoriInventori();
+            refreshUI();
         }
     }
 
@@ -28,7 +51,15 @@ public class Inventory_UI : MonoBehaviour
         }
         else
         {
-            inventori.SetActive(false);
+            inventori.SetActive(false);   
+        }
+    }
+
+    public void refreshUI()
+    {
+        foreach(InventorySlot slot in inventorySlots)
+        {
+            slot.refresh();
         }
     }
 

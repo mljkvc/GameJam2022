@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public FloatingTextManager floatingTextManager;
 
-
     // Floating Text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {

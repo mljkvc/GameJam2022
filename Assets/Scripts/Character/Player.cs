@@ -12,12 +12,13 @@ public class Player : MonoBehaviour
 
     public GameManager gameManager;
 
-    private float moveForce = 100f;
+    private float moveForce = 150f;
 
     private Animator anim;
     private string WALK_ANIMATION = "PlayerWalk";
     private string ATTACK_ANIMATION = "PlayerAttack";
 
+    public VectorValue startingPosition;
     public float health = 100f;
 
     // Start is called before the first frame update
@@ -26,6 +27,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+
+        transform.position = startingPosition.initialValue;
     }
 
     private void FixedUpdate() 
@@ -87,9 +90,14 @@ public class Player : MonoBehaviour
 
     private void attackPlayer()
     {
-        Debug.Log(gameManager);
-        Debug.Log(transform.position);
-        gameManager.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
+        circleHit_x = Physics2D.CircleCast(
+            transform.position, circleCollider2D.radius, new Vector2(moveDelta.x, moveDelta.y)
+        );
+
+        if (circleHit_x.collider != null)
+        {
+            gameManager.ShowText("25 DMG!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
+        }
     }
 
     private void animatePlayer()
