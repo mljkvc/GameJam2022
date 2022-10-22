@@ -10,12 +10,15 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     private Rigidbody2D rb;
 
+    public GameManager gameManager;
+
     private float moveForce = 100f;
 
     private Animator anim;
     private string WALK_ANIMATION = "PlayerWalk";
     private string ATTACK_ANIMATION = "PlayerAttack";
 
+    public VectorValue startingPosition;
     public float health = 100f;
 
     // Start is called before the first frame update
@@ -24,6 +27,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+
+        transform.position = startingPosition.initialValue;
     }
 
     private void FixedUpdate() 
@@ -81,12 +86,13 @@ public class Player : MonoBehaviour
             // We can move
             rb.velocity = (moveDelta * Time.deltaTime * moveForce);
         }
-
     }
 
     private void attackPlayer()
     {
-        GameManager.instance.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
+        Debug.Log(gameManager);
+        Debug.Log(transform.position);
+        gameManager.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
     }
 
     private void animatePlayer()
