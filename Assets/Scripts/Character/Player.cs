@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
     private Rigidbody2D rb;
-
     public GameManager gameManager;
 
     private float moveForce = 150f;
@@ -57,10 +56,11 @@ public class Player : MonoBehaviour
 
         moveDelta = new Vector3(x, y, 0);
 
-        if (moveDelta.x > 0 && originalScale.x < 0)
-            transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
-        else if (moveDelta.x < 0 && originalScale.x > 0)
-            transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+        //transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+        if (moveDelta.x > 0)
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+        else if (moveDelta.x < 0)
+            transform.localEulerAngles = new Vector3(0, -180, 0);
 
         // Meke sure we can move in x and y direction
         
