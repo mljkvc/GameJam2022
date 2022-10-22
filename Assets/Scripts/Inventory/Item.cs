@@ -1,4 +1,5 @@
 using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,12 @@ public class Item
 
     public enum ItemType
     {
+        
         Potion,
         Axe,
         Gun
     }
+
     [SerializeField]
     public ItemType itemType;
     [SerializeField]
@@ -36,23 +39,6 @@ public class Item
               //TODO
           }
       }*/
-  
-
-    public Item(ItemType type, int amount)
-    {
-        this.itemType = type;
-        this.amount = amount;
-    }
-
-
-  /*  public Sprite GetSprite()
-    {
-        switch (itemType)
-        {
-            //TODO
-        }
-    }*/
-
     public static ItemType fromName(String s)
     {
         switch (s)
