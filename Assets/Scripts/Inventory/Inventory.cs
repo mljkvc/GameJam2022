@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     public ItemList itemList;
+    public Inventory_UI inventoryUI;
 
     private static Inventory _instance;
 
@@ -35,13 +36,13 @@ public class Inventory : MonoBehaviour
 
     public void addItem(Item item)
     {
-
         for (int i = 0; i < itemList.list.Count; i++) {
             if (itemList.list[i].itemType == item.itemType)
             {
                 if (item.IsStackable())
                 {
                     itemList.list[i].amount++;
+                    Inventory_UI.Instance.refreshUI();
                     return;
                 }
             }
@@ -50,6 +51,7 @@ public class Inventory : MonoBehaviour
         if(itemList.list.Count < 9)
         {
             itemList.list.Add(item);
+            Inventory_UI.Instance.refreshUI();
         }
 
          
