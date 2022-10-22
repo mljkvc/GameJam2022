@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     private Rigidbody2D rb;
 
+    public GameManager gameManager;
+
     private float moveForce = 100f;
 
     private Animator anim;
@@ -81,12 +83,13 @@ public class Player : MonoBehaviour
             // We can move
             rb.velocity = (moveDelta * Time.deltaTime * moveForce);
         }
-
     }
 
     private void attackPlayer()
     {
-        GameManager.instance.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
+        Debug.Log(gameManager);
+        Debug.Log(transform.position);
+        gameManager.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
     }
 
     private void animatePlayer()
