@@ -12,10 +12,10 @@ public class EnemyKnight : MonoBehaviour
     public float health = 100f;
     bool dead = false;
 
-    Rigidbody2D rb;
-
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
+    public bool weaponInUse = false;
+    public ShootingEnemy shootingEnemy;
 
     // Start is called before the first frame update
     private void Start() {
@@ -23,7 +23,6 @@ public class EnemyKnight : MonoBehaviour
         enemy = GetComponent<Transform>();
 
         animEnemy = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -49,7 +48,6 @@ public class EnemyKnight : MonoBehaviour
             MoveEnemy();
         }
         else {
-            rb.velocity = Vector3.zero;
             animEnemy.SetBool(WALK_ANIMATION, false);
         }
     }
@@ -63,7 +61,15 @@ public class EnemyKnight : MonoBehaviour
         else if (moveDelta.x < 0 && originalScale.x > 0)
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
 
-
         animEnemy.SetBool(WALK_ANIMATION, true);
+    }
+    private void OnCollisionStay(Collision collision) {
+        if (collision.collider.tag == "Player") {
+            if (!weaponInUse) {
+               weaponInUse = true;
+                StartCoroutine (shootingEnemy.Klanje());
+            }
+            Debug.Log(FindObjectOfType<Player>().health);
+        }
     }
 }
