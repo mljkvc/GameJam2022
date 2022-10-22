@@ -3985,6 +3985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ESCcanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6552682008042568325, guid: b7b78c49319a56746a696f5221ce28e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b78c49319a56746a696f5221ce28e4, type: 3}
 --- !u!1 &1908309242
