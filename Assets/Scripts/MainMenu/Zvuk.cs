@@ -49,7 +49,7 @@ public class Zvuk : MonoBehaviour
             unmute3.SetActive(false);
         }
         else if (slajder.value >= 0.66)
-        {
+        {    
             mute.SetActive(false);
             unmute1.SetActive(false);
             unmute2.SetActive(false);

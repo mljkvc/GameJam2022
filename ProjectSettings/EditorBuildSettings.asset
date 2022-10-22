@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 36f509fa77e9a9e449bae1db0705a1bc
   - enabled: 1
-    path: Assets/Scenes/InventorijWIP.unity
+    path: Assets/Scenes/heltbar.unity
     guid: e363e304190a0fb40983bdf031390d09
   - enabled: 0
     path: 
