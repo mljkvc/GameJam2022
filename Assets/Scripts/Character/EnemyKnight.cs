@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnemyKnight : MonoBehaviour
 {
-    public int detectionRadius = 5;
+    private Rigidbody2D rb;
     Transform player;
     Transform enemy;
+
+    public GameObject floatingTextPrefab;
+
+    public int detectionRadius = 5;
     private Vector2 moveDelta;
     public float moveForce = 1.5f;
     public float health = 100f;
@@ -14,11 +18,14 @@ public class EnemyKnight : MonoBehaviour
 
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
+    private string DIE_ANIMATION = "EnemyDeath";
     public bool weaponInUse = false;
-    public ShootingEnemy shootingEnemy;
+    //public ShootingEnemy shootingEnemy;
 
-    float meleeRange = 10;
+    // float meleeRange = 10;
     bool moving = true;
+
+    public GameObject deathEffect;
 
 
     // Start is called before the first frame update
@@ -27,11 +34,14 @@ public class EnemyKnight : MonoBehaviour
         enemy = GetComponent<Transform>();
 
         animEnemy = GetComponent<Animator>();
-        shootingEnemy.enemyKnight = this;
+        //shootingEnemy.enemyKnight = this;
     }
 
     // Update is called once per frame
     private void FixedUpdate() {
+        if (IsDead() == true)
+            return;
+        
         CheckIfPlayerNearby();
         if (!dead) {
             dead = IsDead();
@@ -43,21 +53,39 @@ public class EnemyKnight : MonoBehaviour
             return false;
         }
         else {
-            Debug.Log("DEAD");
             return true;
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        // Trigger floating text
+
+        if (floatingTextPrefab)
+        {
+            ShowFloatingText();
+        }
+
+        health -= damage;
+        Debug.Log(health);
+        if (health <= 0)
+        {
+            // Die
+            Destroy (this.gameObject, 2f);
+            animEnemy.Play(DIE_ANIMATION);
+        }
+    }
+
     void CheckIfPlayerNearby() {
-        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius && moving) {
+        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius && moving && health >= 0) {
             MoveEnemy();
         }
         else {
             animEnemy.SetBool(WALK_ANIMATION, false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
-
     }
+
     void MoveEnemy() {
         Vector3 originalScale = transform.localScale;
         moveDelta = (player.position - enemy.position).normalized;
@@ -70,12 +98,22 @@ public class EnemyKnight : MonoBehaviour
 
         animEnemy.SetBool(WALK_ANIMATION, true);
     }
+
+    void ShowFloatingText()
+    {
+        var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = "25 HP";
+        go.GetComponent<TextMesh>().color = Color.yellow;
+        go.GetComponent<TextMesh>().fontSize = 15;
+    }
+
+    /*
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.collider.tag == "Player") {
             if (!weaponInUse) {
                 weaponInUse = true;
                 moving = false;
-                StartCoroutine(shootingEnemy.Klanje());
+                //StartCoroutine(shootingEnemy.Klanje());
             }
         }
         Debug.Log(weaponInUse);
@@ -94,5 +132,7 @@ public class EnemyKnight : MonoBehaviour
             Debug.Log(FindObjectOfType<Player>().health);
         }
     }*/
+
+    
 
 }
