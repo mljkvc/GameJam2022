@@ -66,6 +66,5 @@ public class EnemyKnight : MonoBehaviour
 
 
         animEnemy.SetBool(WALK_ANIMATION, true);
-        Debug.Log(animEnemy.GetBool(WALK_ANIMATION));
     }
 }

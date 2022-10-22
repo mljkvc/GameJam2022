@@ -18,6 +18,9 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0)) {
+            Klanje();
+        }
         if (Input.GetMouseButtonDown(1)) {
             Shoot();
         }
@@ -32,6 +35,23 @@ public class Shooting : MonoBehaviour
     void Shoot() {
         //Length of the ray
         float laserLength = 50f;
+
+        //Get the first object hit by the ray
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction, 0), laserLength);
+
+        //If the collider of the object hit is not NUll
+        if (hit.collider != null) {
+            if (hit.collider.tag == "Enemy") {
+                //Hit something, print the tag of the object
+                Debug.Log("Hitting: " + hit.collider.tag);
+                FindObjectOfType<EnemyKnight>().health -= damage;
+            }
+        }
+    }
+
+    void Klanje() {
+        //Length of the ray
+        float laserLength = 1f;
 
         //Get the first object hit by the ray
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction, 0), laserLength);

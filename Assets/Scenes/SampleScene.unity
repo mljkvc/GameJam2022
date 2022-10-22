@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 41130829}
   - component: {fileID: 41130825}
   - component: {fileID: 41130824}
+  - component: {fileID: 41130830}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -238,7 +239,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &41130828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -307,6 +308,18 @@ CircleCollider2D:
   m_Offset: {x: -0.05, y: -0.05}
   serializedVersion: 2
   m_Radius: 0.16978875
+--- !u!114 &41130830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41130822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3a40187bec20f4b92aa2030cfbc8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +421,7 @@ GameObject:
   - component: {fileID: 1577357495}
   m_Layer: 9
   m_Name: EnemyKnight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRadius: 5
   moveForce: 1.5
+  health: 100
 --- !u!61 &1577357492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -540,7 +554,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1577357494
 CircleCollider2D:
   m_ObjectHideFlags: 0
