@@ -63,7 +63,7 @@ public class EnemyKnight : MonoBehaviour
 
         if (floatingTextPrefab)
         {
-            ShowFloatingText();
+            //ShowFloatingText();
         }
 
         health -= damage;
@@ -99,6 +99,7 @@ public class EnemyKnight : MonoBehaviour
         animEnemy.SetBool(WALK_ANIMATION, true);
     }
 
+    /*
     void ShowFloatingText()
     {
         var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
@@ -106,6 +107,7 @@ public class EnemyKnight : MonoBehaviour
         go.GetComponent<TextMesh>().color = Color.yellow;
         go.GetComponent<TextMesh>().fontSize = 15;
     }
+    */
 
     /*
     private void OnCollisionStay2D(Collision2D collision) {
