@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +35,10 @@ public class InventorySlot : MonoBehaviour
         item = Inventory.Instance.itemList.list[index];
 
         Image pic = transform.GetChild(0).GetComponent<Image>();
+        TextMeshProUGUI txt = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        txt.text = item.amount.ToString();
+        //TextMeshPro txt = transform.GetChild(1).GetComponent<TextMeshPro>();
+        //txt.text = item.amount.ToString();
         pic.sprite = item.sprite;
     }
 }
