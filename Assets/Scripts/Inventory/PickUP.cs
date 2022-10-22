@@ -10,6 +10,7 @@ public class PickUP : MonoBehaviour
 
 
 
+<<<<<<< Updated upstream
   
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,3 +29,35 @@ public class PickUP : MonoBehaviour
 
     }
 }
+=======
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Collectible")
+        {
+            
+            Item.ItemType type = Item.fromName(collision.gameObject.name);
+            //PUSTI ANIMACIJU ANDJELA PLS
+            Destroy(collision.gameObject);
+            Inventory.addItem(new Item(type, 1));
+
+            //Debug.Log(Inventory.content);
+
+
+        }
+            
+    }
+}
+>>>>>>> Stashed changes
