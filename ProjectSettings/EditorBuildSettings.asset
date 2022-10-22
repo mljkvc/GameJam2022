@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/esc menu.unity
     guid: e363e304190a0fb40983bdf031390d09
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c9e72064c5dfe9b4d8f31b0e8567eaae

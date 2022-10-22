@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class esc_meni : MonoBehaviour
 {
-    public static bool pauzirano = false;
-    public GameObject meni; 
+    public bool pauzirano = false;
+    public GameObject meni;
+
+    private void Start()
+    {
+        meni.SetActive(false);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -41,8 +47,8 @@ public class esc_meni : MonoBehaviour
 
     public void menu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
-
     }
 
     public void exit()
