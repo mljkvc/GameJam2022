@@ -79,14 +79,6 @@ public class Player : MonoBehaviour
         {
             
         }
-        
-        
-        /*Physics2D.CircleCast(
-            transform.position, 
-            circleCollider2D.radius, 
-            new Vector2(Mathf.Abs(moveDelta * Time.deltaTime * moveForce))
-        );*/
-        
 
         if (boxHit_x.collider == null && boxHit_x.collider == null && circleHit_x == false)
         {
