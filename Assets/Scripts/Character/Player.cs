@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 
     private void attackPlayer()
     {
-        
+        GameManager.instance.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, );
     }
 
     private void animatePlayer()
