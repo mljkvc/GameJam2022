@@ -17,12 +17,17 @@ public class EnemyKnight : MonoBehaviour
     public bool weaponInUse = false;
     public ShootingEnemy shootingEnemy;
 
+    float meleeRange = 10;
+    bool moving = true;
+
+
     // Start is called before the first frame update
     private void Start() {
         player = FindObjectOfType<Player>().GetComponent<Transform>();
         enemy = GetComponent<Transform>();
 
         animEnemy = GetComponent<Animator>();
+        shootingEnemy.enemyKnight = this;
     }
 
     // Update is called once per frame
@@ -44,12 +49,14 @@ public class EnemyKnight : MonoBehaviour
     }
 
     void CheckIfPlayerNearby() {
-        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius) {
+        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius && moving) {
             MoveEnemy();
         }
         else {
             animEnemy.SetBool(WALK_ANIMATION, false);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
+
     }
     void MoveEnemy() {
         Vector3 originalScale = transform.localScale;
@@ -63,13 +70,29 @@ public class EnemyKnight : MonoBehaviour
 
         animEnemy.SetBool(WALK_ANIMATION, true);
     }
-    private void OnCollisionStay(Collision collision) {
+    private void OnCollisionStay2D(Collision2D collision) {
         if (collision.collider.tag == "Player") {
             if (!weaponInUse) {
-               weaponInUse = true;
+                weaponInUse = true;
+                moving = false;
+                StartCoroutine(shootingEnemy.Klanje());
+            }
+        }
+        Debug.Log(weaponInUse);
+    }
+    private void OnCollisionExit2D(Collision2D collision) {
+        weaponInUse = false;
+        moving = true;
+    }
+    /*void CheckCollision() {
+        Debug.Log("Kolizija");
+        if (Vector2.Distance(enemy.position, player.position) <= meleeRange) {
+            if (!weaponInUse) {
+                weaponInUse = true;
                 StartCoroutine(shootingEnemy.Klanje());
             }
             Debug.Log(FindObjectOfType<Player>().health);
         }
-    }
+    }*/
+
 }

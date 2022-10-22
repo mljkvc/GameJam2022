@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
 
     int direction = 1;
     float range = 1000;
-    float damage = 10;
+    float damage = 25;
 
     // Start is called before the first frame update
     void Start()
