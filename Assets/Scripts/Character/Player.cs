@@ -15,11 +15,6 @@ public class Player : MonoBehaviour
     private string WALK_ANIMATION = "Walk";
     private string ATTACK_ANIMATION = "Attack";
 
-    private int _attack = 6;
-    private int _defense = 6;
-    private int _maximumHealth = 100;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -118,8 +113,14 @@ public class Player : MonoBehaviour
         // Check if we should attack
         if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
         {
+            // Start attacking
             anim.SetBool(ATTACK_ANIMATION, true);
             attackPlayer();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            // Stop attacking
+            anim.SetBool(ATTACK_ANIMATION, false);
         }
     }
 }
