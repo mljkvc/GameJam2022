@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class esc_meni : MonoBehaviour
 {
-    public static bool pauzirano = false;
+    public bool pauzirano = false;
     public GameObject meni;
 
     private void Start()

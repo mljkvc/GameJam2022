@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     private Rigidbody2D rb;
     public GameManager gameManager;
-
+    
     private float moveForce = 150f;
 
     private Animator anim;
@@ -20,9 +20,12 @@ public class Player : MonoBehaviour
     public VectorValue startingPosition;
     public float health = 100f;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        
+
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
