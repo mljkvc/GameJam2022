@@ -5,9 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-
 public class Inventory : MonoBehaviour
 {
+    //public event EventHandler OnItemListChanged;
 
     [SerializeField]
     public ItemList itemList;
@@ -20,7 +20,6 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
         itemList = new ItemList();
 
         if (_instance != null && _instance != this)
@@ -58,5 +57,3 @@ public class Inventory : MonoBehaviour
          
     }
 }
-
-

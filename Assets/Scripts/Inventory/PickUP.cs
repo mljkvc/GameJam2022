@@ -10,7 +10,6 @@ public class PickUP : MonoBehaviour
 
 
 
-
   
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,12 +27,4 @@ public class PickUP : MonoBehaviour
         }
 
     }
-
-
-    // Start is called before the first frame update
-
-
-
-
-   
 }
