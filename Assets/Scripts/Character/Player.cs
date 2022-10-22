@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     private Rigidbody2D rb;
 
-    private float moveForce = 100;
+    private float moveForce = 500f;
 
     private Animator anim;
     private string WALK_ANIMATION = "PlayerWalk";
