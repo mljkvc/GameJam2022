@@ -11,8 +11,6 @@ public class EnemyKnight : MonoBehaviour
     public float moveForce = 1.5f;
     public float health = 100f;
     bool dead = false;
-    float meleeRange = 10;
-    bool moving = true;
 
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
@@ -25,7 +23,6 @@ public class EnemyKnight : MonoBehaviour
         enemy = GetComponent<Transform>();
 
         animEnemy = GetComponent<Animator>();
-        shootingEnemy.enemyKnight = this;
     }
 
     // Update is called once per frame
@@ -47,12 +44,11 @@ public class EnemyKnight : MonoBehaviour
     }
 
     void CheckIfPlayerNearby() {
-        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius && moving) {
+        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius) {
             MoveEnemy();
         }
         else {
             animEnemy.SetBool(WALK_ANIMATION, false);
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
     void MoveEnemy() {
@@ -67,28 +63,13 @@ public class EnemyKnight : MonoBehaviour
 
         animEnemy.SetBool(WALK_ANIMATION, true);
     }
-    private void OnCollisionStay2D(Collision2D collision) {
-
+    private void OnCollisionStay(Collision collision) {
         if (collision.collider.tag == "Player") {
             if (!weaponInUse) {
                weaponInUse = true;
-                moving = false;
-               StartCoroutine(shootingEnemy.Klanje());
-            }
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision) {
-        weaponInUse = false;
-        moving = true;
-    }
-    /*void CheckCollision() {
-        Debug.Log("Kolizija");
-        if (Vector2.Distance(enemy.position, player.position) <= meleeRange) {
-            if (!weaponInUse) {
-                weaponInUse = true;
                 StartCoroutine(shootingEnemy.Klanje());
             }
             Debug.Log(FindObjectOfType<Player>().health);
         }
-    }*/
+    }
 }

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            //attackPlayer();
+            attackPlayer();
         }
 
     }
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         {
             // Start attacking
             anim.SetBool(ATTACK_ANIMATION, true);
-            //attackPlayer();
+            attackPlayer();
         }
         if (Input.GetButtonUp("Fire1"))
         {
