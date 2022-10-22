@@ -11,7 +11,7 @@ public class EnemyKnight : MonoBehaviour
     public float moveForce = 1.5f;
 
     private Animator animEnemy;
-    private string WALK_ANIMATION = "Walk";
+    private string WALK_ANIMATION = "EnemyWalk";
     
     // Start is called before the first frame update
     private void Start()

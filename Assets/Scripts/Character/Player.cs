@@ -10,11 +10,11 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     private Rigidbody2D rb;
 
-    public float moveForce = 1.5f;
+    private float moveForce = 100;
 
     private Animator anim;
-    private string WALK_ANIMATION = "Walk";
-    private string ATTACK_ANIMATION = "Attack";
+    private string WALK_ANIMATION = "PlayerWalk";
+    private string ATTACK_ANIMATION = "PlayerAttack";
 
     // Start is called before the first frame update
     void Start()
@@ -73,18 +73,11 @@ public class Player : MonoBehaviour
             Mathf.Abs(moveDelta.y * Time.deltaTime * moveForce),
             LayerMask.GetMask("Fighter")
             );
-        
-        
-        if (boxHit_x.collider != null || boxHit_y.collider != null)
-        {
-            
-        }
 
-        if (boxHit_x.collider == null && boxHit_x.collider == null && circleHit_x == false)
+        if (boxHit_x.collider == null && boxHit_x.collider == null)
         {
             // We can move
             rb.velocity = (moveDelta * Time.deltaTime * moveForce);
-
         }
 
     }
