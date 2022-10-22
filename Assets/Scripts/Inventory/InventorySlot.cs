@@ -26,7 +26,7 @@ public class InventorySlot : MonoBehaviour
     }
     private void OnClickAction()
     {
-
+        item.inventoryAction();
     }
     public void refresh()
      {
