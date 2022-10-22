@@ -74,7 +74,7 @@ public class EnemyKnight : MonoBehaviour
         if (health <= 0)
         {
             // Die
-            Destroy (this.gameObject, 2f);
+            Destroy (this.gameObject, 1f);
             animEnemy.Play(DIE_ANIMATION);
         }
     }
