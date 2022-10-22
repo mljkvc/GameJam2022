@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,6 +21,7 @@ public class Item
     public int amount;
     [SerializeField]
     public Sprite sprite;
+    
 
     public Item(ItemType type, int amount, Sprite sprite)
     {
@@ -87,4 +89,18 @@ public class Item
         }
     }
 
+    public void inventoryAction()
+    {
+        switch (this.itemType)
+        {
+            case Item.ItemType.Potion: heal();break;
+        }
+    }
+
+    private void heal()
+    {
+        Player player = Transform.FindObjectOfType<Player>();
+
+        player.health = Math.Min(100, player.health + 25);
+    }
 }
