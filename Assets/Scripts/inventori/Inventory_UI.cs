@@ -29,6 +29,8 @@ public class Inventory_UI : MonoBehaviour
 
     private void Start()
     {
+        foreach (InventorySlot slot in inventorySlots)
+            slot.tidy();
         inventori.SetActive(false);
         inventorySlots= inventori.transform.GetComponentsInChildren<InventorySlot>();
     }
@@ -62,5 +64,7 @@ public class Inventory_UI : MonoBehaviour
             slot.refresh();
         }
     }
+
+    
 
 }

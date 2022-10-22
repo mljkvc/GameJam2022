@@ -41,4 +41,11 @@ public class InventorySlot : MonoBehaviour
         //txt.text = item.amount.ToString();
         pic.sprite = item.sprite;
     }
+
+    public void tidy()
+    {
+        TextMeshProUGUI txt = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        txt.text = "";
+            //item.amount.ToString();
+    }
 }
