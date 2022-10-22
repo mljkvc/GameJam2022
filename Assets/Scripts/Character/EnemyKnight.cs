@@ -9,6 +9,8 @@ public class EnemyKnight : MonoBehaviour
     Transform enemy;
     private Vector2 moveDelta;
     public float moveForce = 1.5f;
+    public float health = 100f;
+    bool dead = false;
 
     private Animator animEnemy;
     private string WALK_ANIMATION = "Walk";
@@ -26,6 +28,19 @@ public class EnemyKnight : MonoBehaviour
     private void FixedUpdate()
     {
         CheckIfPlayerNearby();
+        if (!dead) { 
+            dead = IsDead();
+        }
+    }
+
+    bool IsDead() {
+        if (health > 0) {
+            return false;
+        }
+        else {
+            Debug.Log("DEAD");
+            return true;
+        }
     }
 
     void CheckIfPlayerNearby() {

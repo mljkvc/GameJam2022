@@ -6,6 +6,10 @@ public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventori;
 
+    private void Start()
+    {
+        inventori.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,18 +25,11 @@ public class Inventory_UI : MonoBehaviour
         if (!inventori.activeSelf)
         {
             inventori.SetActive(true);
-            Setup();
         }
         else
         {
-            inventori.SetActive(false); 
+            inventori.SetActive(false);
         }
-
-    }
-
-    void Setup()
-    {
-
     }
 
 }
