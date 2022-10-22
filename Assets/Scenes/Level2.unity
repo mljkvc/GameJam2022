@@ -7557,8 +7557,8 @@ Tilemap:
   - first: {x: -2, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 2
+      m_TileIndex: 30
+      m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -16712,7 +16712,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 277a2f633bb44344e83b80ffb2e2fc5e, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: b5eb441553382e946854584dbf69d5a4, type: 2}
+<<<<<<< Updated upstream
   - m_RefCount: 81
+=======
+  - m_RefCount: 56
+>>>>>>> Stashed changes
     m_Data: {fileID: 11400000, guid: c12c10c8494c59a41a6d49fef901979c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 841abcc90cb6bfe41a0e72488441cd4a, type: 2}
@@ -16766,7 +16770,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6f3e85dce297be944bfa41e394bdef13, type: 2}
   - m_RefCount: 13
     m_Data: {fileID: 11400000, guid: 75ce179d7a124b4489c66b2f5ba07360, type: 2}
+<<<<<<< Updated upstream
   - m_RefCount: 283
+=======
+  - m_RefCount: 280
+>>>>>>> Stashed changes
     m_Data: {fileID: 11400000, guid: 8b09735ff7b2b374a80ddf8a65dbd46c, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: e90778301ef7e624495ea22e317aa9cf, type: 2}
@@ -16853,7 +16861,11 @@ Tilemap:
     m_Data: {fileID: -1520281697, guid: 69fcee4d4ad7c1c4a9cb1e8fcd3f7c38, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -1859273427, guid: ac0d1510931185f46b34a9225c2e8baf, type: 3}
+<<<<<<< Updated upstream
   - m_RefCount: 81
+=======
+  - m_RefCount: 56
+>>>>>>> Stashed changes
     m_Data: {fileID: -1980482401, guid: ac0d1510931185f46b34a9225c2e8baf, type: 3}
   - m_RefCount: 13
     m_Data: {fileID: -1639798534, guid: 69fcee4d4ad7c1c4a9cb1e8fcd3f7c38, type: 3}
@@ -16908,8 +16920,13 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: 1174823265, guid: ac0d1510931185f46b34a9225c2e8baf, type: 3}
   - m_RefCount: 1
+<<<<<<< Updated upstream
     m_Data: {fileID: 563413866, guid: 69fcee4d4ad7c1c4a9cb1e8fcd3f7c38, type: 3}
   - m_RefCount: 283
+=======
+    m_Data: {fileID: -227589328, guid: 69fcee4d4ad7c1c4a9cb1e8fcd3f7c38, type: 3}
+  - m_RefCount: 280
+>>>>>>> Stashed changes
     m_Data: {fileID: -862380824, guid: ac0d1510931185f46b34a9225c2e8baf, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1045165683, guid: 69fcee4d4ad7c1c4a9cb1e8fcd3f7c38, type: 3}
@@ -17335,7 +17352,11 @@ Transform:
   m_GameObject: {fileID: 614870172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.05, y: 1.1, z: -1}
+<<<<<<< Updated upstream
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+=======
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 866674973}
