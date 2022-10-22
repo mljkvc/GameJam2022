@@ -12,6 +12,8 @@ public class EnemyKnight : MonoBehaviour
     public float health = 100f;
     bool dead = false;
 
+    Rigidbody2D rb;
+
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
 
@@ -21,6 +23,7 @@ public class EnemyKnight : MonoBehaviour
         enemy = GetComponent<Transform>();
 
         animEnemy = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class EnemyKnight : MonoBehaviour
             MoveEnemy();
         }
         else {
+            rb.velocity = Vector3.zero;
             animEnemy.SetBool(WALK_ANIMATION, false);
         }
     }

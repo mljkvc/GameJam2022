@@ -10,6 +10,10 @@ public class FloatingTextManager : MonoBehaviour
 
     private List<FloatingText> floatingTexts = new List<FloatingText>();
 
+    private void Awake() {
+        textPrefab.SetActive(false);
+    }
+
     private void Update() 
     {
         foreach (FloatingText txt in floatingTexts)
@@ -29,6 +33,7 @@ public class FloatingTextManager : MonoBehaviour
             txt.txt = txt.go.GetComponent<Text>();
 
             floatingTexts.Add(txt);
+            txt.go.SetActive(true);
         }
 
         return txt;
@@ -37,6 +42,7 @@ public class FloatingTextManager : MonoBehaviour
     public void Show(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         FloatingText floatingText = GetFloatingText();
+        
         floatingText.txt.text = msg;
         floatingText.txt.fontSize = fontSize;
         floatingText.txt.color = color;
