@@ -2164,6 +2164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level2
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!1 &532910260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,6 +2328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e979a06d8d299be44890514f0d5336bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
 --- !u!61 &658349884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3888,6 +3891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level2
+  playerPosition: {x: -5.87, y: 0.55}
+  playerStorage: {fileID: 11400000, guid: 320062c2517a86c47b725e9a1440d567, type: 2}
 --- !u!1 &1908309242
 GameObject:
   m_ObjectHideFlags: 0
