@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         itemList = new ItemList();
 
         if (_instance != null && _instance != this)
