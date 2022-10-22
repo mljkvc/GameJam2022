@@ -17,18 +17,13 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
 
-        //marko pravio
-        escMain = canvas.GetComponent<esc_meni>();
-
-
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if(escMain.pauzirano == false)
-                Shoot();
+            Shoot();
         }
     }
     void Shoot()

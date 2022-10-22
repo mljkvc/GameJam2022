@@ -40,7 +40,10 @@ public class EnemyKnight : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate() {
         if (IsDead() == true)
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             return;
+        }
         
         CheckIfPlayerNearby();
         if (!dead) {
