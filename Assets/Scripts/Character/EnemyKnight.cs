@@ -12,10 +12,14 @@ public class EnemyKnight : MonoBehaviour
     public float health = 100f;
     bool dead = false;
 
-    Rigidbody2D rb;
-
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
+    public bool weaponInUse = false;
+    public ShootingEnemy shootingEnemy;
+
+    float meleeRange = 10;
+    bool moving = true;
+
 
     // Start is called before the first frame update
     private void Start() {
@@ -23,7 +27,7 @@ public class EnemyKnight : MonoBehaviour
         enemy = GetComponent<Transform>();
 
         animEnemy = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        shootingEnemy.enemyKnight = this;
     }
 
     // Update is called once per frame
@@ -45,13 +49,14 @@ public class EnemyKnight : MonoBehaviour
     }
 
     void CheckIfPlayerNearby() {
-        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius) {
+        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius && moving) {
             MoveEnemy();
         }
         else {
-            rb.velocity = Vector3.zero;
             animEnemy.SetBool(WALK_ANIMATION, false);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
+
     }
     void MoveEnemy() {
         Vector3 originalScale = transform.localScale;
@@ -63,7 +68,31 @@ public class EnemyKnight : MonoBehaviour
         else if (moveDelta.x < 0 && originalScale.x > 0)
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
 
-
         animEnemy.SetBool(WALK_ANIMATION, true);
     }
+    private void OnCollisionStay2D(Collision2D collision) {
+        if (collision.collider.tag == "Player") {
+            if (!weaponInUse) {
+                weaponInUse = true;
+                moving = false;
+                StartCoroutine(shootingEnemy.Klanje());
+            }
+        }
+        Debug.Log(weaponInUse);
+    }
+    private void OnCollisionExit2D(Collision2D collision) {
+        weaponInUse = false;
+        moving = true;
+    }
+    /*void CheckCollision() {
+        Debug.Log("Kolizija");
+        if (Vector2.Distance(enemy.position, player.position) <= meleeRange) {
+            if (!weaponInUse) {
+                weaponInUse = true;
+                StartCoroutine(shootingEnemy.Klanje());
+            }
+            Debug.Log(FindObjectOfType<Player>().health);
+        }
+    }*/
+
 }

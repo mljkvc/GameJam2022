@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            attackPlayer();
+            //attackPlayer();
         }
 
     }
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void attackPlayer()
+    /*private void attackPlayer()
     {
         circleHit_x = Physics2D.CircleCast(
             transform.position, circleCollider2D.radius, new Vector2(moveDelta.x, moveDelta.y)
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         {
             gameManager.ShowText("25 DMG!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
         }
-    }
+    }*/
 
     private void animatePlayer()
     {
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         {
             // Start attacking
             anim.SetBool(ATTACK_ANIMATION, true);
-            attackPlayer();
+            //attackPlayer();
         }
         if (Input.GetButtonUp("Fire1"))
         {
