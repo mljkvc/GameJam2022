@@ -9,8 +9,15 @@ public class LevelTransition : MonoBehaviour
     public Vector2 playerPosition;
     public VectorValue playerStorage;
 
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Player") ){
+    // private void OnTriggerEnter2D(Collider2D other){
+    //     if(other.CompareTag("Player")){
+    //         playerStorage.initialValue = playerPosition;
+    //         SceneManager.LoadScene(sceneToLoad);
+    //     }
+    // }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Player") && !other.isTrigger) {
             playerStorage.initialValue = playerPosition;
             SceneManager.LoadScene(sceneToLoad);
         }
