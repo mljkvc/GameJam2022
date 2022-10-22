@@ -1,8 +1,4 @@
 using System;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,21 +10,10 @@ public class Item
 
     public enum ItemType
     {
-<<<<<<< Updated upstream
-        
-=======
-        Sword,
-        HealthPotion,
-        ManaPotion,
-        Coin,
-        Medkit,
->>>>>>> Stashed changes
         Potion,
         Axe,
         Gun
     }
-
-<<<<<<< Updated upstream
     [SerializeField]
     public ItemType itemType;
     [SerializeField]
@@ -51,9 +36,7 @@ public class Item
               //TODO
           }
       }*/
-=======
-    public ItemType itemType;
-    public int amount;
+  
 
     public Item(ItemType type, int amount)
     {
@@ -69,7 +52,7 @@ public class Item
             //TODO
         }
     }*/
->>>>>>> Stashed changes
+
     public static ItemType fromName(String s)
     {
         switch (s)
@@ -95,7 +78,6 @@ public class Item
     {
         switch (itemType)
         {
-<<<<<<< Updated upstream
             case ItemType.Potion:
                 return true;
             case ItemType.Axe:
@@ -106,20 +88,3 @@ public class Item
     }
 
 }
-=======
-            default:
-            case ItemType.Coin:
-            case ItemType.HealthPotion:
-            case ItemType.ManaPotion:
-            case ItemType.Potion:
-                return true;
-            case ItemType.Sword:
-            case ItemType.Medkit:
-            case ItemType.Axe:
-            case ItemType.Gun:
-                return false;
-        }
-    }
-
-}
->>>>>>> Stashed changes
