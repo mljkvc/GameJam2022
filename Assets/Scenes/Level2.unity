@@ -16671,11 +16671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e979a06d8d299be44890514f0d5336bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   gameManager: {fileID: 0}
-=======
-  startingPosition: {fileID: 11400000, guid: 320062c2517a86c47b725e9a1440d567, type: 2}
->>>>>>> Stashed changes
   health: 100
 --- !u!58 &614870177
 CircleCollider2D:
