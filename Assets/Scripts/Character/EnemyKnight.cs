@@ -13,7 +13,7 @@ public class EnemyKnight : MonoBehaviour
     bool dead = false;
 
     private Animator animEnemy;
-    private string WALK_ANIMATION = "EnemyWalk";
+    private string WALK_ANIMATION = "Walk";
     
     // Start is called before the first frame update
     private void Start()
@@ -66,6 +66,5 @@ public class EnemyKnight : MonoBehaviour
 
 
         animEnemy.SetBool(WALK_ANIMATION, true);
-        Debug.Log(animEnemy.GetBool(WALK_ANIMATION));
     }
 }
