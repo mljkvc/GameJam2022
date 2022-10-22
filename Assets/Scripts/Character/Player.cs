@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private CircleCollider2D circleCollider2D;
     private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
+    private Rigidbody2D rb;
 
     public float moveForce = 1.5f;
 
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
     }
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
 
         // Meke sure we can move in x and y direction
+        
         boxHit_x = Physics2D.BoxCast(
             transform.position, 
             boxCollider.size, 
@@ -75,26 +78,25 @@ public class Player : MonoBehaviour
             Mathf.Abs(moveDelta.y * Time.deltaTime * moveForce),
             LayerMask.GetMask("Fighter")
             );
-
+        
+        
         if (boxHit_x.collider != null || boxHit_y.collider != null)
         {
-            Debug.Log(boxHit_x.ToString());
-            Debug.Log(boxHit_y.ToString());
-            Debug.Log("AHA");
+            
         }
-
-        /*
-        Physics2D.CircleCast(
+        
+        
+        /*Physics2D.CircleCast(
             transform.position, 
             circleCollider2D.radius, 
             new Vector2(Mathf.Abs(moveDelta * Time.deltaTime * moveForce))
-        );
-        */ 
+        );*/
+        
 
         if (boxHit_x.collider == null && boxHit_x.collider == null && circleHit_x == false)
         {
             // We can move
-            transform.Translate(moveDelta * Time.deltaTime * moveForce);
+            rb.velocity = (moveDelta * Time.deltaTime * moveForce);
 
         }
 
