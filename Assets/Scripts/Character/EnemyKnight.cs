@@ -14,10 +14,9 @@ public class EnemyKnight : MonoBehaviour
 
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
-    
+
     // Start is called before the first frame update
-    private void Start()
-    {
+    private void Start() {
         player = FindObjectOfType<Player>().GetComponent<Transform>();
         enemy = GetComponent<Transform>();
 
@@ -25,10 +24,9 @@ public class EnemyKnight : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         CheckIfPlayerNearby();
-        if (!dead) { 
+        if (!dead) {
             dead = IsDead();
         }
     }
@@ -44,17 +42,14 @@ public class EnemyKnight : MonoBehaviour
     }
 
     void CheckIfPlayerNearby() {
-        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius) 
-        {
+        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius) {
             MoveEnemy();
         }
-        else
-        {
+        else {
             animEnemy.SetBool(WALK_ANIMATION, false);
         }
     }
-    void MoveEnemy() 
-    {
+    void MoveEnemy() {
         Vector3 originalScale = transform.localScale;
         moveDelta = (player.position - enemy.position).normalized;
         transform.Translate(moveDelta * Time.deltaTime * moveForce);
@@ -66,6 +61,5 @@ public class EnemyKnight : MonoBehaviour
 
 
         animEnemy.SetBool(WALK_ANIMATION, true);
-        Debug.Log(animEnemy.GetBool(WALK_ANIMATION));
     }
 }
