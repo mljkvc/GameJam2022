@@ -6,13 +6,14 @@ public class Player : MonoBehaviour
 {
     private BoxCollider2D boxCollider;
     private CircleCollider2D circleCollider2D;
-    private RaycastHit2D hit_x, hit_y;
+    private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
 
     public float moveForce = 1.5f;
 
     private Animator anim;
     private string WALK_ANIMATION = "Walk";
+    private string ATTACK_ANIMATION = "Attack";
 
     private int _attack = 6;
     private int _defense = 6;
@@ -58,15 +59,15 @@ public class Player : MonoBehaviour
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
 
         // Meke sure we can move in x and y direction
-        hit_x = Physics2D.BoxCast(
+        boxHit_x = Physics2D.BoxCast(
             transform.position, 
             boxCollider.size, 
             0,
-            new Vector2(moveDelta.x, 0), 
+            new Vector2(moveDelta.x, moveDelta.y), 
             Mathf.Abs(moveDelta.x * Time.deltaTime * moveForce),
             LayerMask.GetMask("Fighter")
             );
-        hit_y = Physics2D.BoxCast(
+        boxHit_y = Physics2D.BoxCast(
             transform.position, 
             boxCollider.size, 
             0, 
@@ -75,8 +76,10 @@ public class Player : MonoBehaviour
             LayerMask.GetMask("Fighter")
             );
 
-        if (hit_x.collider != null || hit_y.collider != null)
+        if (boxHit_x.collider != null || boxHit_y.collider != null)
         {
+            Debug.Log(boxHit_x.ToString());
+            Debug.Log(boxHit_y.ToString());
             Debug.Log("AHA");
         }
 
@@ -86,9 +89,9 @@ public class Player : MonoBehaviour
             circleCollider2D.radius, 
             new Vector2(Mathf.Abs(moveDelta * Time.deltaTime * moveForce))
         );
-        */
+        */ 
 
-        if (hit_x.collider == null && hit_y.collider == null)
+        if (boxHit_x.collider == null && boxHit_x.collider == null && circleHit_x == false)
         {
             // We can move
             transform.Translate(moveDelta * Time.deltaTime * moveForce);
@@ -111,5 +114,12 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, true);
         else 
             anim.SetBool(WALK_ANIMATION, false);
+
+        // Check if we should attack
+        if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
+        {
+            anim.SetBool(ATTACK_ANIMATION, true);
+            attackPlayer();
+        }
     }
 }
