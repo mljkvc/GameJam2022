@@ -18642,6 +18642,7 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1159925113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18699,6 +18700,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e34b856420b7647969e4f0d993dfd1, type: 3}
+=======
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 =======
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 --- !u!1 &1252645621
@@ -20482,6 +20485,7 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1480577890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20871,6 +20875,9 @@ PrefabInstance:
 =======
 --- !u!1 &1333864601
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
+=======
+--- !u!1 &1333864601
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20878,6 +20885,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 1555454492}
   - component: {fileID: 1555454491}
@@ -20891,6 +20899,8 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &1555454490
 =======
+=======
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
   - component: {fileID: 1333864604}
   - component: {fileID: 1333864603}
   - component: {fileID: 1333864602}
@@ -20902,6 +20912,9 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1333864602
+<<<<<<< HEAD
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
+=======
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20909,7 +20922,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1555454489}
+=======
+  m_GameObject: {fileID: 1333864601}
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 =======
   m_GameObject: {fileID: 1333864601}
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
@@ -20919,15 +20936,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   sceneToLoad: Level2
   playerPosition: {x: -5.87, y: 0.55}
   playerStorage: {fileID: 11400000, guid: 320062c2517a86c47b725e9a1440d567, type: 2}
 --- !u!61 &1555454491
 =======
+=======
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
   sceneToLoad: Level3
   playerPosition: {x: -5.87, y: 0.55}
   playerStorage: {fileID: 11400000, guid: 320062c2517a86c47b725e9a1440d567, type: 2}
 --- !u!61 &1333864603
+<<<<<<< HEAD
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
+=======
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20935,7 +20958,11 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1555454489}
+=======
+  m_GameObject: {fileID: 1333864601}
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 =======
   m_GameObject: {fileID: 1333864601}
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
@@ -20959,7 +20986,11 @@ BoxCollider2D:
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &1555454492
+=======
+--- !u!4 &1333864604
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 =======
 --- !u!4 &1333864604
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
@@ -20968,6 +20999,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1555454489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -20978,6 +21010,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
 =======
+=======
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
   m_GameObject: {fileID: 1333864601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.28, y: -11.11, z: -0.054390762}
@@ -20986,6 +21020,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+<<<<<<< HEAD
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
+=======
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575874229

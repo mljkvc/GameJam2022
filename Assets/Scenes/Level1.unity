@@ -2128,6 +2128,7 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &148314871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2513,6 +2514,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494d87194256dc046bca8ecdfae75055, type: 3}
+=======
+>>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 =======
 >>>>>>> parent of b2e8800 (Merge branch 'main' of https://github.com/Brankonymous/GameJam2022)
 --- !u!1 &195516682
