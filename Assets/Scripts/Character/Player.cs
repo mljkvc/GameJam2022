@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private string WALK_ANIMATION = "PlayerWalk";
     private string ATTACK_ANIMATION = "PlayerAttack";
 
+    public float health = 100f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
 
     private void attackPlayer()
     {
-        
+        GameManager.instance.ShowText("Attack!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
     }
 
     private void animatePlayer()
