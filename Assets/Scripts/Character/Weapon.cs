@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (FindObjectOfType<Player>().getWeaponType() == 1 && Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
