@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float moveForce = 150f;
 
-    private int weaponType = 1;
     private float meleeAttackRange = 1.5f;
     private bool isDead = false;
 
@@ -116,22 +115,6 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, true);
         else 
             anim.SetBool(WALK_ANIMATION, false);
-
-        if (weaponType == 0)
-        {
-            // Check if we should attack
-            if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
-            {
-                // Start attacking
-                anim.SetBool(ATTACK_ANIMATION, true);
-                meleeAttack();
-            }
-            if (Input.GetButtonUp("Fire1"))
-            {
-                // Stop attacking
-                anim.SetBool(ATTACK_ANIMATION, false);
-            }
-        }
     }
 
     public void meleeAttack()
@@ -146,10 +129,5 @@ public class Player : MonoBehaviour
             }
         }
         
-    }
-
-    public int getWeaponType()
-    {
-        return weaponType;
     }
 }
