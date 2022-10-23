@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventori;
     public InventorySlot[] inventorySlots;
+    public Boolean isOpen = false;
 
     private static Inventory_UI _instance;
 
@@ -50,10 +52,12 @@ public class Inventory_UI : MonoBehaviour
         if (!inventori.activeSelf)
         {
             inventori.SetActive(true);
+            isOpen = true;
         }
         else
         {
-            inventori.SetActive(false);   
+            inventori.SetActive(false);
+            isOpen = false;
         }
     }
 

@@ -3161,6 +3161,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 373912983}
   bulletPrefab: {fileID: 3199955429309616155, guid: ac5e38b869d4fd440a804cd549a51a82, type: 3}
+  canvas: {fileID: 0}
+--- !u!223 &1514594069 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6552682008042568322, guid: b7b78c49319a56746a696f5221ce28e4, type: 3}
+  m_PrefabInstance: {fileID: 1762397644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1742423973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4306,6 +4312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 195516683}
     m_Modifications:
+    - target: {fileID: 3394258446724545073, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1514594069}
     - target: {fileID: 3394258446724545074, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4315,12 +4325,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: -0.033
       objectReference: {fileID: 0}
     - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: -0.0125
       objectReference: {fileID: 0}
     - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4354,6 +4376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3394258446724545076, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2072674e28cc8e846a2507e4f9d79982, type: 3}
     - target: {fileID: 3394258446724545078, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_Size.x
       value: 0.35
