@@ -17201,7 +17201,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1a269062c238fce428ae75c1c84c0a77, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.773
+  m_Volume: 0.64
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20692,7 +20692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b02a380417045840b835c4d5afb648f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTransform: {fileID: 0}
+  followTransform: {fileID: 461853711}
 --- !u!114 &784871425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23720,8 +23720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264.30212, y: 117.30005}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchoredPosition: {x: 797, y: 360}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671868638
 MonoBehaviour:
@@ -24282,6 +24282,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2347993595676782523, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -59.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347993595676782523, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 135.03
+      objectReference: {fileID: 0}
     - target: {fileID: 2347993596580676916, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
       propertyPath: m_Pivot.x
       value: 0

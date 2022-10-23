@@ -361,8 +361,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -126.84088, y: -46.13304, z: -123.10034, w: -33.66469}
+  m_margin: {x: -527.79596, y: -241.09288, z: -608.6603, w: -206.55345}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: After a Nuclear War was announced, I took shelder deep underground.
+  m_text: After a Nuclear War was announced, I took shelter deep underground.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 619050dbbe2b1d941bb3a0ef37c32fd0, type: 2}
   m_sharedMaterial: {fileID: 3254531513725641719, guid: 619050dbbe2b1d941bb3a0ef37c32fd0, type: 2}
@@ -888,8 +888,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -126.84088, y: -46.13304, z: -123.10034, w: -33.66469}
+  m_margin: {x: -612.4012, y: -274.19922, z: -693.2656, w: -195.51797}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
