@@ -529,7 +529,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 9
 --- !u!1 &1390951117213340495
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 4
 --- !u!1 &1471843644011063148
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +835,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 6
 --- !u!1 &1573700642005815750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1379,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 3
 --- !u!1 &3181682534175392801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1532,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 5
 --- !u!1 &3346638584116011984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2090,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 1
 --- !u!1 &4476522612851836845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,7 +2639,7 @@ RectTransform:
   - {fileID: 6954911182864179845}
   - {fileID: 4492585168841727970}
   - {fileID: 7849638902112902267}
-  m_Father: {fileID: 334905870784463302}
+  m_Father: {fileID: 4812458247800301641}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2802,6 +2802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4812458247800301641}
   - component: {fileID: 8928295962616944369}
+  - component: {fileID: 8788925032133424195}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -2821,13 +2822,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4812458246647455002}
   - {fileID: 334905870784463302}
   m_Father: {fileID: 4812458246293018298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -246.72699, y: 0}
+  m_AnchoredPosition: {x: -280.5, y: 0}
   m_SizeDelta: {x: 493.455, y: 527.787}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8928295962616944369
@@ -2842,9 +2844,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04189a49b45cc954d96e3dc346f28764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventori: {fileID: 4822387131164429152}
+  inventori: {fileID: 4812458246647455001}
   inventorySlots: []
-  isOpen: 0
+--- !u!95 &8788925032133424195
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812458247800301640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b6b34ac4f77b5e4b82f0b7e3113ffb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4822387131164429152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &334905870784463302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2870,14 +2891,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4822387131164429152}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4812458246647455002}
+  m_Children: []
   m_Father: {fileID: 4812458247800301641}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3707,7 +3727,7 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 8
 --- !u!1 &8724470042310783600
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,4 +4001,4 @@ MonoBehaviour:
     itemType: 0
     amount: 0
     sprite: {fileID: 0}
-  index: 0
+  index: 7
