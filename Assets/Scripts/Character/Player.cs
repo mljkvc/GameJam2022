@@ -129,6 +129,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
     public void meleeAttack()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Fighter");
@@ -140,6 +141,6 @@ public class Player : MonoBehaviour
                 enemy.GetComponent<EnemyKnight>().TakeDamage(25);
             }
         }
-        
     }
+    */
 }
