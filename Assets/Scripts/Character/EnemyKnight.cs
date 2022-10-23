@@ -164,6 +164,7 @@ public class EnemyKnight : MonoBehaviour
 
             pfbDMG.transform.localEulerAngles = new Vector3(0, -180, 0);
             Instantiate(pfbDMG, transform.position, Quaternion.identity);
+            
         }
 
         /*
