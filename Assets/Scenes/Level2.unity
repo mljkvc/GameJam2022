@@ -16983,7 +16983,7 @@ GameObject:
   - component: {fileID: 582441663}
   - component: {fileID: 582441665}
   - component: {fileID: 582441664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16998,7 +16998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582441662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20755,7 +20755,7 @@ Transform:
   - {fileID: 582441663}
   - {fileID: 666528182}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088889622
 GameObject:
@@ -23524,7 +23524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.053138074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3394258446724545075, guid: 77524c0bbcdbadb4f863f434b873e68c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24183,7 +24183,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423934411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.1813388, y: -1.313867, z: 0.053138074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24193,7 +24193,7 @@ Transform:
   - {fileID: 1088889623}
   - {fileID: 1134201254}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575874229
 GameObject:
@@ -24279,7 +24279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1575874233
 MonoBehaviour:
