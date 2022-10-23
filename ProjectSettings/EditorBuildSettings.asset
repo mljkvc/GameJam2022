@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/main scena/MAIN MENU.unity
     guid: bd083134bfe740e4d9d1821dfc50362a
   - enabled: 1
+    path: Assets/Scenes/pocetak.unity
+    guid: e6d0065308e2e3e4db6e283f84e98b02
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: ec01f651f1a978d4b8df18b2eb4475f7
   - enabled: 1
