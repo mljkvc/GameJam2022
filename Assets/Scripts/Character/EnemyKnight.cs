@@ -127,15 +127,15 @@ public class EnemyKnight : MonoBehaviour
         }
         else {
             animEnemy.SetBool(WALK_ANIMATION, false);
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            rb.velocity = Vector3.zero;
         }
     }
 
     public void MoveEnemy() {
         //Vector3 originalScale = transform.localScale;
-        //moveDelta = (player.position - enemy.position).normalized;
         //transform.Translate(moveDelta * Time.deltaTime * moveForce);
 
+        moveDelta = (player.position - enemy.position).normalized;
         rb.velocity = (moveDelta * Time.deltaTime * moveForce);
         Debug.Log(rb.velocity);
 
