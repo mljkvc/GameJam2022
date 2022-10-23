@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public Rigidbody2D rb;
+    public GameObject pfbDmg;
 
     public float damage = 25f;
 
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            
         }
         Destroy(gameObject);
     }
