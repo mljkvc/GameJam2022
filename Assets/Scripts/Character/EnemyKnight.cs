@@ -103,6 +103,7 @@ public class EnemyKnight : MonoBehaviour
         {
             // Die
             dead = true;
+            GetComponent<Collider2D>().enabled = false;
             Destroy (this.gameObject, 1f);
             animEnemy.Play(DEATH_ANIMATION);
         }

@@ -8,7 +8,7 @@ public class srce1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FindObjectOfType<Player>().health > 25f)
+        if (Player.health > 25f)
             GetComponent<Image>().enabled = true;
         else
             GetComponent<Image>().enabled = false;
