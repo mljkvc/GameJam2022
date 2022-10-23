@@ -8,6 +8,7 @@ public class CameraFollowMinimap : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, -750);
+        if(transform != null && followTransform != null)
+            this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, -750);
     }
 }
