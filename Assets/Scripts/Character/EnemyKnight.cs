@@ -192,21 +192,11 @@ public class EnemyKnight : MonoBehaviour
     }
     */
 
-    /*
+    
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.collider.tag == "Player") {
-            if (!weaponInUse) {
-                weaponInUse = true;
-                moving = false;
-
-
-            }
+            rb.velocity = Vector2.zero;
         }
-        Debug.Log(weaponInUse);
-    }
-    private void OnCollisionExit2D(Collision2D collision) {
-        weaponInUse = false;
-        moving = true;
     }
 
 
