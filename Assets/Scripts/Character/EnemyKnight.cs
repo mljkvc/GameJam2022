@@ -10,6 +10,7 @@ public class EnemyKnight : MonoBehaviour
 
     public GameObject floatingTextPrefab;
     public GameObject playerObject;
+    public GameObject pfbDMG;
 
     public float detectionRadius = 7f;
     private float attackTime = 3.5f;
@@ -157,11 +158,21 @@ public class EnemyKnight : MonoBehaviour
     /*
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Shootable"))
+        {
+
+            pfbDMG.transform.localEulerAngles = new Vector3(0, -180, 0);
+            Instantiate(pfbDMG, transform.position, Quaternion.identity);
+           // Instantiate(pfbDMG, gameObject.transform);
+        }
+
+
         if (other.CompareTag("Player"))
         {
             animEnemy.SetBool(ATTACK_ANIMATION, true);
             isTriggered = true;
             timeTriggered = Time.time;
+           
         }
     }
     
