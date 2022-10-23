@@ -17043,9 +17043,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: -672462665
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -20297,7 +20297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814524359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.85, y: 0, z: 0}
+  m_LocalPosition: {x: 2.85, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21120,6 +21120,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   floatingTextPrefab: {fileID: 2610035169024543174, guid: ea5565732491a914587fd823e1d89ebf, type: 3}
   playerObject: {fileID: 0}
+  pfbDMG: {fileID: 0}
   detectionRadius: 7
   enemyMoveForce: 20
   health: 100
@@ -21590,6 +21591,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   floatingTextPrefab: {fileID: 2610035169024543174, guid: ea5565732491a914587fd823e1d89ebf, type: 3}
   playerObject: {fileID: 0}
+  pfbDMG: {fileID: 0}
   detectionRadius: 7
   enemyMoveForce: 20
   health: 100
@@ -24043,7 +24045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405590504}
   - component: {fileID: 1405590505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24058,7 +24060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405590503}
   m_LocalRotation: {x: -0, y: -0, z: -0.7091403, w: 0.7050674}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25109,6 +25111,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   floatingTextPrefab: {fileID: 2610035169024543174, guid: ea5565732491a914587fd823e1d89ebf, type: 3}
   playerObject: {fileID: 0}
+  pfbDMG: {fileID: 0}
   detectionRadius: 7
   enemyMoveForce: 20
   health: 100
