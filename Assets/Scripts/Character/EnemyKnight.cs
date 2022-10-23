@@ -15,7 +15,7 @@ public class EnemyKnight : MonoBehaviour
     private float attackRadius = 1.5f;
     private float attackTime = 3.5f;
     private Vector2 moveDelta;
-    public float moveForce = 1.5f;
+    public float enemyMoveForce = 20f;
     public float health = 100f;
 
     private bool dead = false;
@@ -135,8 +135,8 @@ public class EnemyKnight : MonoBehaviour
         //Vector3 originalScale = transform.localScale;
         //transform.Translate(moveDelta * Time.deltaTime * moveForce);
 
-        moveDelta = (player.position - enemy.position).normalized;
-        rb.velocity = (moveDelta * Time.deltaTime * moveForce);
+        moveDelta = (player.position - enemy.position);
+        rb.velocity = (moveDelta * Time.deltaTime * enemyMoveForce);
         Debug.Log(rb.velocity);
 
         if (moveDelta.x > 0)
