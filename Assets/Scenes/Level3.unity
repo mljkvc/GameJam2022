@@ -424,7 +424,7 @@ Transform:
   - {fileID: 1462213446}
   - {fileID: 734777841}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &156829689
 Rigidbody2D:
@@ -31312,7 +31312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421221176296992490, guid: 38e34b856420b7647969e4f0d993dfd1, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 421221176296992490, guid: 38e34b856420b7647969e4f0d993dfd1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31373,7 +31373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6552682008042568321, guid: b7b78c49319a56746a696f5221ce28e4, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6552682008042568321, guid: b7b78c49319a56746a696f5221ce28e4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -31590,7 +31590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4263688417261437926, guid: a5c9eb7bb2dd8c042a7c866c9b57558a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263688417261437926, guid: a5c9eb7bb2dd8c042a7c866c9b57558a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37572,7 +37572,7 @@ Transform:
   - {fileID: 709091552}
   - {fileID: 1222558466}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378205339
 GameObject:
@@ -37649,7 +37649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2347993596580676916, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2347993596580676916, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -39016,7 +39016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c7681512cf33e4eab32a563ca69a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTransform: {fileID: 0}
+  followTransform: {fileID: 1520070061}
 --- !u!81 &2107679856
 AudioListener:
   m_ObjectHideFlags: 0
@@ -39081,5 +39081,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
