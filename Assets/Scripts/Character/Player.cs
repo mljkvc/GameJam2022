@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,7 +10,8 @@ public class Player : MonoBehaviour
     private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
     private Rigidbody2D rb;
-    private float moveForce = 150f;
+    public float moveForce = 150f;
+    public float duration = 2f;
 
     private Animator anim;
     private string WALK_ANIMATION = "PlayerWalk";
@@ -120,4 +122,20 @@ public class Player : MonoBehaviour
             anim.SetBool(ATTACK_ANIMATION, false);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Laxative")
+        {
+            moveForce *= 6;
+            Invoke(nameof(fart), duration);
+            
+        }
+    }
+    
+    private void fart()
+    {
+        moveForce /= 6;
+    }
+
 }
