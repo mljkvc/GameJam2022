@@ -119,6 +119,7 @@ public class EnemyKnight : MonoBehaviour
 
     public IEnumerator TejkujDemidz() {
         while (!isPlayerDead && isCollidingWithPlayer) {
+
             isPlayerDead = FindObjectOfType<Player>().TakeDamage(25);
             isDamagingThePlayer = true;
             yield return new WaitForSecondsRealtime(1f);
@@ -155,7 +156,7 @@ public class EnemyKnight : MonoBehaviour
         if (!walkSoundEffect.isPlaying)
             walkSoundEffect.Play();
     }
-    /*
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Shootable"))
@@ -163,10 +164,9 @@ public class EnemyKnight : MonoBehaviour
 
             pfbDMG.transform.localEulerAngles = new Vector3(0, -180, 0);
             Instantiate(pfbDMG, transform.position, Quaternion.identity);
-           // Instantiate(pfbDMG, gameObject.transform);
         }
 
-
+        /*
         if (other.CompareTag("Player"))
         {
             animEnemy.SetBool(ATTACK_ANIMATION, true);
@@ -174,8 +174,9 @@ public class EnemyKnight : MonoBehaviour
             timeTriggered = Time.time;
            
         }
+        */
     }
-    
+
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
@@ -184,7 +185,7 @@ public class EnemyKnight : MonoBehaviour
             timeTriggered = Time.time;
         }
     }
-    */
+    
     /*
     void ShowFloatingText()
     {

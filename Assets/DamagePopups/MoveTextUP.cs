@@ -14,7 +14,7 @@ public class MoveTextUP : MonoBehaviour
 
     void Start()
     {
-        dis.text = "25";
+        dis.text = Random.Range(25, 33).ToString();
         dis.color = Color.red;
 
         StartCoroutine(FadeOut());
