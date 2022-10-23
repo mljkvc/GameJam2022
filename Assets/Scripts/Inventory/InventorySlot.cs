@@ -37,6 +37,7 @@ public class InventorySlot : MonoBehaviour
         switch (this.item.itemType)
         {
             case Item.ItemType.Potion: heal(); break;
+            case Item.ItemType.SpeedPotion: speedUP();break;
         }
     }
     public void refresh()
@@ -78,16 +79,33 @@ public class InventorySlot : MonoBehaviour
         this.refresh();
         Debug.Log(player.health);
     }
+
+    private void speedUP()
+    {
+        Debug.Log("BRZOBRZO");
+        Player player = Transform.FindObjectOfType<Player>();
+
+        if (item.amount > 0)
+        {
+            player.moveForce += 20;
+            item.amount--;
+        }
+        else if (item.amount <= 0) this.zeroed();
+        
+        this.refresh();
+        Debug.Log(player.health);
+    }
+
     private void zeroed()
     {
         int i = Inventory.Instance.itemList.list.Count - 1;
         Inventory.Instance.itemList.list.RemoveAt(i);
     }
 
-
-
-
     
+
+
+
 
 
 }
