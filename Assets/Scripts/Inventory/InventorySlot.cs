@@ -11,6 +11,7 @@ public class InventorySlot : MonoBehaviour
     public Item item;
     public int index;
     private Button btn;
+    private Sprite img;
 
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class InventorySlot : MonoBehaviour
 
     void Start()
     {
+        img = transform.GetChild(0).GetComponent<Image>().sprite;
         btn = GetComponent<Button>();
         btn.onClick.AddListener(() => {
             Debug.Log("STISNUTO");
@@ -32,12 +34,10 @@ public class InventorySlot : MonoBehaviour
     public void OnClickAction()
     {
         
-        Debug.Log("POZVANO");
         switch (this.item.itemType)
         {
             case Item.ItemType.Potion: heal(); break;
         }
-        Debug.Log("POZVANO");
     }
     public void refresh()
      {
@@ -47,10 +47,16 @@ public class InventorySlot : MonoBehaviour
 
         Image pic = transform.GetChild(0).GetComponent<Image>();
         TextMeshProUGUI txt = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        txt.text = item.amount.ToString();
-        //TextMeshPro txt = transform.GetChild(1).GetComponent<TextMeshPro>();
-        //txt.text = item.amount.ToString();
-        pic.sprite = item.sprite;
+        if (item.amount > 0)
+        {
+            txt.text = item.amount.ToString();
+            pic.sprite = item.sprite;
+        }
+        else
+        {
+            txt.text = "";
+            pic.sprite = img;
+        }
     }
 
     public void tidy()
@@ -62,32 +68,26 @@ public class InventorySlot : MonoBehaviour
     private void heal()
     {
         Player player = Transform.FindObjectOfType<Player>();
-
-        player.health = Math.Min(100, player.health + 25);
-    }
-
-
-
-
-    private int whatKey(KeyCode key)
-    {
-        switch (key)
+        //Debug.Log(player.gameObject.name);
+        if (item.amount > 0 && player.health!=100)
         {
-            case KeyCode.Alpha1: return 1;
-            case KeyCode.Alpha2: return 2;
-            case KeyCode.Alpha3: return 3;
-            case KeyCode.Alpha4: return 4;
-            case KeyCode.Alpha5: return 5;
-            case KeyCode.Alpha6: return 6;
-            case KeyCode.Alpha7: return 7;
-            case KeyCode.Alpha8: return 8;
-            case KeyCode.Alpha9: return 9;
-
+            player.health = Math.Min(100, player.health + 25);
+            item.amount--;
         }
-
-
-        return -1;
+        else if(item.amount<=0) this.zeroed();
+        this.refresh();
+        Debug.Log(player.health);
     }
+    private void zeroed()
+    {
+        int i = Inventory.Instance.itemList.list.Count - 1;
+        Inventory.Instance.itemList.list.RemoveAt(i);
+    }
+
+
+
+
+    
 
 
 }
