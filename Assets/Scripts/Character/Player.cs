@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,10 +9,8 @@ public class Player : MonoBehaviour
     private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
     private Rigidbody2D rb;
-    public float moveForce = 150f;
-    public float duration = 2f;
+    private float moveForce = 150f;
 
-    private int weaponType = 1;
     private float meleeAttackRange = 1.5f;
     private bool isDead = false;
 
@@ -118,40 +115,7 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, true);
         else 
             anim.SetBool(WALK_ANIMATION, false);
-
-        if (weaponType == 0)
-        {
-            // Check if we should attack
-            if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
-            {
-                // Start attacking
-                anim.SetBool(ATTACK_ANIMATION, true);
-                meleeAttack();
-            }
-            if (Input.GetButtonUp("Fire1"))
-            {
-                // Stop attacking
-                anim.SetBool(ATTACK_ANIMATION, false);
-            }
-        }
     }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Laxative")
-        {
-            moveForce *= 6;
-            Invoke(nameof(fart), duration);
-            
-        }
-    }
-    
-    private void fart()
-    {
-        moveForce /= 6;
-    }
-
 
     public void meleeAttack()
     {
@@ -166,10 +130,4 @@ public class Player : MonoBehaviour
         }
         
     }
-
-    public int getWeaponType()
-    {
-        return weaponType;
-    }
-
 }
