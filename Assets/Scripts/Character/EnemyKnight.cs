@@ -24,6 +24,13 @@ public class EnemyKnight : MonoBehaviour
     private bool isTriggered = false;
     private float timeTriggered;
 
+    [SerializeField]
+    private AudioSource walkSoundEffect;
+    [SerializeField]
+    private AudioSource attackSoundEffect;
+    [SerializeField]
+    private AudioSource hitSoundEffect;
+
     private Animator animEnemy;
     private string WALK_ANIMATION = "EnemyWalk";
     private string ATTACK_ANIMATION = "EnemyAttack";
@@ -62,6 +69,7 @@ public class EnemyKnight : MonoBehaviour
             timeTriggered = Time.time;
 
             animEnemy.SetBool(ATTACK_ANIMATION, true);
+            attackSoundEffect.Play();
         }
         
         CheckIfPlayerNearby();
@@ -90,11 +98,13 @@ public class EnemyKnight : MonoBehaviour
         }
 
         health -= damage;
-        Debug.Log(health);
+
+        hitSoundEffect.Play();
         if (health <= 0)
         {
             // Die
             dead = true;
+            GetComponent<Collider2D>().enabled = false;
             Destroy (this.gameObject, 1f);
             animEnemy.Play(DEATH_ANIMATION);
         }
@@ -129,6 +139,9 @@ public class EnemyKnight : MonoBehaviour
         else {
             animEnemy.SetBool(WALK_ANIMATION, false);
             rb.velocity = Vector3.zero;
+
+            if (walkSoundEffect.isPlaying)
+                walkSoundEffect.Stop();
         }
     }
 
@@ -146,6 +159,9 @@ public class EnemyKnight : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, -180, 0);
 
         animEnemy.SetBool(WALK_ANIMATION, true);
+
+        if (!walkSoundEffect.isPlaying)
+            walkSoundEffect.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -187,21 +203,11 @@ public class EnemyKnight : MonoBehaviour
     }
     */
 
-    /*
+    
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.collider.tag == "Player") {
-            if (!weaponInUse) {
-                weaponInUse = true;
-                moving = false;
-
-
-            }
+            rb.velocity = Vector2.zero;
         }
-        Debug.Log(weaponInUse);
-    }
-    private void OnCollisionExit2D(Collision2D collision) {
-        weaponInUse = false;
-        moving = true;
     }
 
 

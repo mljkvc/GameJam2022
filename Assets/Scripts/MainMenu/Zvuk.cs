@@ -12,17 +12,25 @@ public class Zvuk : MonoBehaviour
     public GameObject unmute3;
     public GameObject mute;
 
+    public AudioSource muzika;
+    public float jacina;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey("zvuk"))
+        if (PlayerPrefs.GetInt("FirstPLay") == 0)
         {
-            PlayerPrefs.SetFloat("zvuk", 1);
-            Load();
+            jacina = 0.75f;
+            slajder.value = jacina;
+            PlayerPrefs.SetFloat("BackgroundPref", 0.75f);
+            PlayerPrefs.SetInt("FirstPlay", -1);
         }
         else
-            Load();
-        
+        {
+            jacina = PlayerPrefs.GetFloat("BackgroundPref");
+            slajder.value = jacina;
+        }
+            
     }
 
     private void Update()
@@ -60,6 +68,8 @@ public class Zvuk : MonoBehaviour
     }
     public void promeni_zvuk()
     {
+        muzika.volume = slajder.value;
+
         AudioListener.volume = slajder.value;
         Save();
     }
