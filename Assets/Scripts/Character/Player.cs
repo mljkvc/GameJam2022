@@ -13,9 +13,14 @@ public class Player : MonoBehaviour
     public float moveForce = 150f;
     public float duration = 2f;
 
+    private int weaponType = 1;
+    private float meleeAttackRange = 1.5f;
+    private bool isDead = false;
+
     private Animator anim;
     private string WALK_ANIMATION = "PlayerWalk";
     private string ATTACK_ANIMATION = "PlayerAttack";
+    private string DEATH_ANIMATION = "PlayerDeath";
 
     public VectorValue startingPosition;
     public float health = 100f;
@@ -33,18 +38,18 @@ public class Player : MonoBehaviour
     private void FixedUpdate() 
     {
         movePlayer();
+        if (isDead)
+            return;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+            return;
+        
         animatePlayer();
-
-        if(Input.GetButtonDown("Fire1"))
-        {
-            //attackPlayer();
-        }
-
     }
 
     private void movePlayer() 
@@ -87,18 +92,23 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*private void attackPlayer()
+    public bool TakeDamage(float damage)
     {
-        circleHit_x = Physics2D.CircleCast(
-            transform.position, circleCollider2D.radius, new Vector2(moveDelta.x, moveDelta.y)
-        );
-
-        if (circleHit_x.collider != null)
+        health -= damage;
+        Debug.Log("Our Health");
+        Debug.Log(health);
+        if (health <= 0)
         {
-            gameManager.ShowText("25 DMG!", 25, Color.yellow, transform.position, Vector3.up * 50, 3.0f);
+            // Die
+            isDead = true;
+            anim.SetBool(DEATH_ANIMATION, true);
+            Destroy(this.gameObject, 1f);
+            anim.Play(DEATH_ANIMATION);
         }
-    }*/
 
+        return isDead;
+    }
+    
     private void animatePlayer()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -109,19 +119,23 @@ public class Player : MonoBehaviour
         else 
             anim.SetBool(WALK_ANIMATION, false);
 
-        // Check if we should attack
-        if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
+        if (weaponType == 0)
         {
-            // Start attacking
-            anim.SetBool(ATTACK_ANIMATION, true);
-            //attackPlayer();
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            // Stop attacking
-            anim.SetBool(ATTACK_ANIMATION, false);
+            // Check if we should attack
+            if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
+            {
+                // Start attacking
+                anim.SetBool(ATTACK_ANIMATION, true);
+                meleeAttack();
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                // Stop attacking
+                anim.SetBool(ATTACK_ANIMATION, false);
+            }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -136,6 +150,26 @@ public class Player : MonoBehaviour
     private void fart()
     {
         moveForce /= 6;
+    }
+
+
+    public void meleeAttack()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Fighter");
+
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector2.Distance(transform.position, enemy.transform.position) <= meleeAttackRange)
+            {
+                enemy.GetComponent<EnemyKnight>().TakeDamage(25);
+            }
+        }
+        
+    }
+
+    public int getWeaponType()
+    {
+        return weaponType;
     }
 
 }
