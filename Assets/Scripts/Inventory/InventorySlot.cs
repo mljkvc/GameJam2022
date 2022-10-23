@@ -70,14 +70,14 @@ public class InventorySlot : MonoBehaviour
     {
         Player player = Transform.FindObjectOfType<Player>();
         //Debug.Log(player.gameObject.name);
-        if (item.amount > 0 && player.health!=100)
+        if (item.amount > 0 && Player.health != 100f)
         {
-            player.health = Math.Min(100, player.health + 25);
+            Player.health = Math.Min(100, Player.health + 25);
             item.amount--;
         }
         else if(item.amount<=0) this.zeroed();
         this.refresh();
-        Debug.Log(player.health);
+        Debug.Log(Player.health);
     }
 
     private void speedUP()
@@ -93,7 +93,7 @@ public class InventorySlot : MonoBehaviour
         else if (item.amount <= 0) this.zeroed();
         
         this.refresh();
-        Debug.Log(player.health);
+        Debug.Log(Player.health);
     }
 
     private void zeroed()

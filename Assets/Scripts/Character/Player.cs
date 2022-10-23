@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private string DEATH_ANIMATION = "PlayerDeath";
 
     public VectorValue startingPosition;
-    public float health = 100f;
+    public static float health = 100f;
 
     // Start is called before the first frame update
     void Start()

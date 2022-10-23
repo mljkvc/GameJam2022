@@ -106,7 +106,7 @@ public class Item
     {
         Player player = Transform.FindObjectOfType<Player>();
 
-        player.health = Math.Min(100, player.health + 25);
+        Player.health = Math.Min(100, Player.health + 25);
     }
     
     private void speedUP()
