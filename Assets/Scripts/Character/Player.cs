@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
     private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
     private Rigidbody2D rb;
-    public GameManager gameManager;
-
     private float moveForce = 150f;
 
     private Animator anim;
@@ -50,7 +48,6 @@ public class Player : MonoBehaviour
     private void movePlayer() 
     {
         // Get info for moving
-        Vector3 originalScale = transform.localScale;
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 

@@ -7,6 +7,18 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     public Transform firePoint;
     public GameObject bulletPrefab;
+
+
+    //marko pravio
+    public Canvas canvas;
+    private esc_meni escMain;
+
+
+    private void Start()
+    {
+
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
