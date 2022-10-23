@@ -12,11 +12,13 @@ public class EnemyKnight : MonoBehaviour
     public GameObject playerObject;
 
     public float detectionRadius = 7f;
-    private float attackRadius = 1.5f;
     private float attackTime = 3.5f;
     private Vector2 moveDelta;
     public float enemyMoveForce = 20f;
     public float health = 100f;
+
+    bool isCollidingWithPlayer = false;
+    bool isDamagingThePlayer = false;
 
     private bool dead = false;
     private bool isPlayerDead = false;
@@ -111,31 +113,22 @@ public class EnemyKnight : MonoBehaviour
 
     public void AttackPlayer()
     {
-        if (isPlayerDead)
-            return;
-        
-        isPlayerDead = FindObjectOfType<Player>().TakeDamage(25);
+        StartCoroutine(TejkujDemidz());
     }
 
-    public void CheckIfPlayerNearby() {
-        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius) {
-            if (Vector2.Distance(player.position, enemy.position) <= attackRadius)
-            {
-                if (!isTriggered || (isTriggered && Time.time - timeTriggered > 0.4))
-                {
-                    isTriggered = true;
-                    timeTriggered = Time.time;
-                    AttackPlayer();
-
-                    animEnemy.SetBool(ATTACK_ANIMATION, true);
-                }
-            }
-            else
-            {
-                MoveEnemy();
-            }
+    public IEnumerator TejkujDemidz() {
+        while (!isPlayerDead && isCollidingWithPlayer) {
+            isPlayerDead = FindObjectOfType<Player>().TakeDamage(25);
+            isDamagingThePlayer = true;
+            yield return new WaitForSecondsRealtime(1f);
         }
-        else {
+    }
+    
+    public void CheckIfPlayerNearby() {
+        if (Vector2.Distance(player.position, enemy.position) <= detectionRadius && !isCollidingWithPlayer) {
+            MoveEnemy();
+        }
+        else{
             animEnemy.SetBool(WALK_ANIMATION, false);
             rb.velocity = Vector3.zero;
 
@@ -143,7 +136,6 @@ public class EnemyKnight : MonoBehaviour
                 walkSoundEffect.Stop();
         }
     }
-
     public void MoveEnemy() {
         //Vector3 originalScale = transform.localScale;
         //transform.Translate(moveDelta * Time.deltaTime * moveForce);
@@ -162,7 +154,7 @@ public class EnemyKnight : MonoBehaviour
         if (!walkSoundEffect.isPlaying)
             walkSoundEffect.Play();
     }
-
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -181,7 +173,7 @@ public class EnemyKnight : MonoBehaviour
             timeTriggered = Time.time;
         }
     }
-
+    */
     /*
     void ShowFloatingText()
     {
@@ -195,8 +187,19 @@ public class EnemyKnight : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.collider.tag == "Player") {
+            isCollidingWithPlayer = true;
             rb.velocity = Vector2.zero;
+            if (!isDamagingThePlayer) {
+                AttackPlayer();
+            }
+            animEnemy.SetBool(WALK_ANIMATION, false);
+            animEnemy.SetBool(ATTACK_ANIMATION, true);
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) {
+        isCollidingWithPlayer = false;
+        isDamagingThePlayer = false;
     }
 
 
@@ -211,6 +214,6 @@ public class EnemyKnight : MonoBehaviour
         }
     }*/
 
-    
+
 
 }

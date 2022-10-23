@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, -180, 0);
 
         // Meke sure we can move in x and y direction
-        
+        /*
         boxHit_x = Physics2D.BoxCast(
             transform.position, 
             boxCollider.size, 
@@ -88,13 +88,8 @@ public class Player : MonoBehaviour
             Mathf.Abs(moveDelta.y * Time.deltaTime * moveForce),
             LayerMask.GetMask("Fighter")
             );
-
-        if (boxHit_x.collider == null && boxHit_x.collider == null)
-        {
-            // We can move
-            rb.velocity = (moveDelta * Time.deltaTime * moveForce);
-
-        }
+        */
+        rb.velocity = (moveDelta * Time.deltaTime * moveForce);
     }
 
     public bool TakeDamage(float damage)
