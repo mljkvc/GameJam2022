@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class zika : MonoBehaviour
 {
+
+    public static zika obj;
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        if(obj == null)
+        {
+            obj = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
