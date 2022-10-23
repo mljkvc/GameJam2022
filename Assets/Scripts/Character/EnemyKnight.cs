@@ -39,6 +39,7 @@ public class EnemyKnight : MonoBehaviour
 
     // Start is called before the first frame update
     private void Start() {
+        rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>().GetComponent<Transform>();
         enemy = GetComponent<Transform>();
 
@@ -131,14 +132,17 @@ public class EnemyKnight : MonoBehaviour
     }
 
     public void MoveEnemy() {
-        Vector3 originalScale = transform.localScale;
-        moveDelta = (player.position - enemy.position).normalized;
-        transform.Translate(moveDelta * Time.deltaTime * moveForce);
+        //Vector3 originalScale = transform.localScale;
+        //moveDelta = (player.position - enemy.position).normalized;
+        //transform.Translate(moveDelta * Time.deltaTime * moveForce);
 
-        if (moveDelta.x > 0 && originalScale.x < 0)
-            transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
-        else if (moveDelta.x < 0 && originalScale.x > 0)
-            transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+        rb.velocity = (moveDelta * Time.deltaTime * moveForce);
+        Debug.Log(rb.velocity);
+
+        if (moveDelta.x > 0)
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+        else if (moveDelta.x < 0)
+            transform.localEulerAngles = new Vector3(0, -180, 0);
 
         animEnemy.SetBool(WALK_ANIMATION, true);
     }
