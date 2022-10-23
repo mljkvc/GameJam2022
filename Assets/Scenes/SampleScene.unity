@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 884986401}
-  bulletPrefab: {fileID: 2587936487070096263, guid: ac5e38b869d4fd440a804cd549a51a82, type: 3}
+  bulletPrefab: {fileID: 3199955429309616155, guid: ac5e38b869d4fd440a804cd549a51a82, type: 3}
   canvas: {fileID: 0}
 --- !u!1 &884986400
 GameObject:
