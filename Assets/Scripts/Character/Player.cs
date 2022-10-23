@@ -115,6 +115,18 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, true);
         else 
             anim.SetBool(WALK_ANIMATION, false);
+
+        if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
+        {
+            // Start attacking
+            anim.SetBool(ATTACK_ANIMATION, true);
+            // meleeAttack();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            // Stop attacking
+            anim.SetBool(ATTACK_ANIMATION, false);
+        }
     }
 
     public void meleeAttack()
