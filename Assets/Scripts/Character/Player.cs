@@ -11,6 +11,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public float moveForce = 200f;
 
+    [SerializeField]
+    private AudioSource walkSoundEffect;
+    [SerializeField]
+    private AudioSource attackSoundEffect;
+    [SerializeField]
+    private AudioSource hitSoundEffect;
+
     private float meleeAttackRange = 1.5f;
     private bool isDead = false;
 
@@ -86,6 +93,7 @@ public class Player : MonoBehaviour
         {
             // We can move
             rb.velocity = (moveDelta * Time.deltaTime * moveForce);
+
         }
     }
 
@@ -94,6 +102,9 @@ public class Player : MonoBehaviour
         health -= damage;
         Debug.Log("Our Health");
         Debug.Log(health);
+
+        hitSoundEffect.Play();
+
         if (health <= 0)
         {
             // Die
@@ -112,15 +123,24 @@ public class Player : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         if (x != 0 || y != 0)
+        {
             anim.SetBool(WALK_ANIMATION, true);
-        else 
+            if (!walkSoundEffect.isPlaying)
+                walkSoundEffect.Play();
+        }
+        else
+        {
             anim.SetBool(WALK_ANIMATION, false);
+            if (walkSoundEffect.isPlaying)
+                walkSoundEffect.Stop();
+        }
+            
 
         if (Input.GetButtonDown("Fire1") && anim.GetBool(ATTACK_ANIMATION) == false)
         {
             // Start attacking
             anim.SetBool(ATTACK_ANIMATION, true);
-            // meleeAttack();
+            attackSoundEffect.Play();
         }
         if (Input.GetButtonUp("Fire1"))
         {
