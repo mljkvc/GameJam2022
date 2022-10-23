@@ -424,11 +424,7 @@ Transform:
   - {fileID: 1462213446}
   - {fileID: 734777841}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 8
-=======
   m_RootOrder: 0
->>>>>>> c3b300c2bada05a3d1bdfaa53ae8b70c4d77648b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &156829689
 Rigidbody2D:
@@ -438,7 +434,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156829686}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -31316,11 +31312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421221176296992490, guid: 38e34b856420b7647969e4f0d993dfd1, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 7
-=======
       value: 9
->>>>>>> c3b300c2bada05a3d1bdfaa53ae8b70c4d77648b
       objectReference: {fileID: 0}
     - target: {fileID: 421221176296992490, guid: 38e34b856420b7647969e4f0d993dfd1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31598,11 +31590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4263688417261437926, guid: a5c9eb7bb2dd8c042a7c866c9b57558a, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 5
-=======
       value: 2
->>>>>>> c3b300c2bada05a3d1bdfaa53ae8b70c4d77648b
       objectReference: {fileID: 0}
     - target: {fileID: 4263688417261437926, guid: a5c9eb7bb2dd8c042a7c866c9b57558a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31671,11 +31659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2292555491134612038, guid: ccc3b65ff49664f46ad9cdca5b0744d9, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 4
-=======
       value: 5
->>>>>>> c3b300c2bada05a3d1bdfaa53ae8b70c4d77648b
       objectReference: {fileID: 0}
     - target: {fileID: 2292555491134612038, guid: ccc3b65ff49664f46ad9cdca5b0744d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37665,11 +37649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2347993596580676916, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 0
-=======
       value: 7
->>>>>>> c3b300c2bada05a3d1bdfaa53ae8b70c4d77648b
       objectReference: {fileID: 0}
     - target: {fileID: 2347993596580676916, guid: 9d9e7eb8b69b59d45a976fec459dfecd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -39101,9 +39081,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 2
-=======
   m_RootOrder: 3
->>>>>>> c3b300c2bada05a3d1bdfaa53ae8b70c4d77648b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
