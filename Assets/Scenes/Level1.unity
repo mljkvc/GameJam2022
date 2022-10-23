@@ -12322,6 +12322,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   floatingTextPrefab: {fileID: 2610035169024543174, guid: ea5565732491a914587fd823e1d89ebf, type: 3}
   playerObject: {fileID: 0}
+  pfbDMG: {fileID: 6327215875616895929, guid: da47090e0671c0c449d10b3210994835, type: 3}
   detectionRadius: 7
   enemyMoveForce: 20
   health: 100
