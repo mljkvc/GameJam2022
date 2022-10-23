@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     public ItemList itemList;
+    [SerializeField]
     public Inventory_UI inventoryUI;
 
     private static Inventory _instance;
@@ -20,6 +21,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
+        
         DontDestroyOnLoad(this);
         itemList = new ItemList();
 

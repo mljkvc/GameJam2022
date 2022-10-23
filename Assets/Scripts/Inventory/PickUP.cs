@@ -8,16 +8,12 @@ using UnityEngine;
 public class PickUP : MonoBehaviour
 {
 
-
-
-
-  
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Collectible"))
         {
+            Debug.Log("SUDAR");
             ItemObject item = collision.gameObject.GetComponent<ItemObject>();
             Item itemData = item.item;
             //PUSTI ANIMACIJU ANDJELA PLS
