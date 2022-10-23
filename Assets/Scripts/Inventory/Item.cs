@@ -13,7 +13,8 @@ public class Item
     {
         Potion,
         Axe,
-        Gun
+        Gun,
+        SpeedPotion
     }
     [SerializeField]
     public ItemType itemType;
@@ -62,6 +63,7 @@ public class Item
             case "Axe": return ItemType.Axe;
             case "Gun": return ItemType.Gun;
             case "Potion": return ItemType.Potion;
+            case "SpeedPotion": return ItemType.SpeedPotion;
             default: return ItemType.Potion;
         }
     }
@@ -72,6 +74,7 @@ public class Item
             case Item.ItemType.Potion: return "Potion";
             case Item.ItemType.Axe: return "Axe";
             case Item.ItemType.Gun: return "Gun";
+            case Item.ItemType.SpeedPotion: return "SpeedPotion";
             default: return "";
         }
     }
@@ -81,6 +84,7 @@ public class Item
         switch (itemType)
         {
             case ItemType.Potion:
+            case Item.ItemType.SpeedPotion:
                 return true;
             case ItemType.Axe:
             case ItemType.Gun:
@@ -94,6 +98,7 @@ public class Item
         switch (this.itemType)
         {
             case Item.ItemType.Potion: heal();break;
+            case Item.ItemType.SpeedPotion:speedUP();break;
         }
     }
 
@@ -102,5 +107,11 @@ public class Item
         Player player = Transform.FindObjectOfType<Player>();
 
         player.health = Math.Min(100, player.health + 25);
+    }
+    
+    private void speedUP()
+    {
+        Player player = Transform.FindObjectOfType<Player>();
+        player.moveForce += 20;
     }
 }

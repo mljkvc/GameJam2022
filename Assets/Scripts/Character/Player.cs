@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private RaycastHit2D boxHit_x, boxHit_y, circleHit_x, circleHit_y;
     private Vector3 moveDelta;
     private Rigidbody2D rb;
-    private float moveForce = 150f;
+    public float moveForce = 150f;
 
     private float meleeAttackRange = 1.5f;
     private bool isDead = false;
